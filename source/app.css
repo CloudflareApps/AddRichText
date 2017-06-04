@@ -1,0 +1,20 @@
+cloudflare-app[app="rich-text"] {
+  display: block;
+  display: flex;
+}
+
+cloudflare-app[app="rich-text"] content-wrapper {
+  display: block;
+}
+
+cloudflare-app[app="rich-text"][data-position="left"] {
+  justify-content: flex-start;
+}
+
+cloudflare-app[app="rich-text"][data-position="center"] {
+  justify-content: center;
+}
+
+cloudflare-app[app="rich-text"][data-position="right"] {
+  justify-content: flex-end;
+}

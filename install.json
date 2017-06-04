@@ -1,0 +1,80 @@
+{
+  "resources": {
+    "head": [
+      {
+        "type": "style",
+        "src": "./source/app.css"
+      },
+      {
+        "type": "script",
+        "src": "./source/app.js"
+      }
+    ]
+  },
+  "preview": {
+    "handlers": [
+      {
+        "options": ["*"],
+        "execute": "INSTALL_SCOPE.setOptions(INSTALL_OPTIONS)"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "blocks": {
+        "title": "Rich Text Blocks",
+        "order": 1,
+        "type": "array",
+        "default": [
+          {
+            "content": "<h1>Live rich text</h1><p>...Embedded directly on your site.</p>",
+            "location": {
+              "method": "prepend",
+              "selector": "body"
+            },
+            "position": "left"
+          }
+        ],
+        "items": {
+          "title": "HTML Block",
+          "type": "object",
+          "properties": {
+            "location": {
+              "title": "Location",
+              "description": "Where on the page would you like to add your content?",
+              "type": "object",
+              "format": "element",
+              "order": 1,
+              "default": {
+                "method": "prepend",
+                "selector": "body"
+              }
+            },
+            "content": {
+              "title": "Content",
+              "type": "string",
+              "format": "richtext",
+              "order": 2
+            },
+            "position": {
+              "order": 3,
+              "title": "Horizontal alignment",
+              "type": "string",
+              "default": "left",
+              "enum": [
+                "left",
+                "center",
+                "right"
+              ],
+              "enumNames": {
+                "left": "Left",
+                "center": "Center",
+                "right": "Right"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
